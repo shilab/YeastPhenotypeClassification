@@ -1,0 +1,25 @@
+README
+
+
+1.Dataset 
+
+We use a comprehensively assayed yeast genotype dataset (Bloom, Kotenko et al. 2015), which contains the genotype profile of 28,820 unique genetic variants that was obtained by sequencing 4,390 observations from a cross between two strains of yeast: a widely used laboratory strain (BY) and an isolate from a vineyard (RM). The original data fields in the yeast genotype profile were encoded as -1 for BY and 1 for RM. 
+
+Together with profiled genotypes, this yeast population was phenotyped for 20 end-point growth traits with at least two replicates. In this study, we picked Diamide phenotypes for investigation. We calculated the mean of two replicates as the final phenotypes while the NAs were ignored, and then phenotypes were binarized, 0 for negative value and 1 for positive value. 
+
+The final dataset was balanced by down sampling, where has 3762 individuals in total.
+
+2.Method
+A Lasso model and a deep learning method were built in this project. 
+
+Lasso model is written in R language in a Jupyter Notebook. Its parameter lambda is optimized by using cross-validation. The Lasso model achieved around 80% of accuracy in test dataset.
+
+The deep learning model was written in python language in a Jupyter Notebook. It has one CNN layer and one dense layer. The data was first one-hot-encoded before inputting into model. Deep learning model achieved around 84% of accuracy in test dataset.
+
+For both of two methods, the trained models can be found in models folder. And the code for loading trained models can be found in Jupyter Notebooks.
+
+
+Reference
+Bloom, J. S., et al. (2015). "Genetic interactions contribute less than additive effects to quantitative trait variation in yeast." Nature communications 6: 8712.
+	
+
